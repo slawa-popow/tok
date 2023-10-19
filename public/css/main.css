@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 main > section {
-    padding: 25px 0;
+    padding: 0;
 }
 
 .btn {
@@ -160,7 +160,7 @@ main > section {
 
 .sec-title h2 {
     font-size: 30px;
-    margin: 0 0 30px;
+    margin: 30px 0;
     padding-bottom: 30px;
     position: relative;
     text-transform: uppercase;
@@ -272,7 +272,7 @@ main > section {
          -o-transition: all 0.8s ease 0s;
             transition: all 0.8s ease 0s;
 
-    background-color: rgba(0,0,0,.75);
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     padding: 5px 0;
 }
@@ -300,20 +300,20 @@ h1.navbar-brand {
 ==================================================================*/
 
 .homepart {
-    background-image: url(../img/fon.jpg);
-    background-repeat: repeat-x;
-    background-size: cover;  
+    margin: 0;
+
+    background-color: black; 
      
 }
 
 .about-home {
-    padding: 10px 0;
-    background-color: #0d7bc5ee;
-    border: 1px solid #0d80cc;
-    border-radius: 5px;
+    margin-top: -50px;
 }
 
-
+#jmb-home img {
+    max-width: 400px;
+    height: 280px;
+}
 
 
 /*=================================================================
@@ -345,7 +345,7 @@ h1.navbar-brand {
 #about .message-body {
     font-size: 13px;
     line-height: 20px;
-    margin-bottom: 70px;
+    margin: 30px;
 }
 
 .owl-buttons {
@@ -443,13 +443,13 @@ h1.navbar-brand {
 }
 
 figcaption.mask {
-    background-color: rgba(54, 55, 50, 0.79);
-    bottom: -126px;
+    background-color: rgba(54, 55, 50, 0.5);
+    bottom: -90px;
     color: #fff;
     padding: 25px;
     position: absolute;
     width: 100%;
-    text-align: left;
+    text-align: center;
     
     -webkit-transition: all 0.4s ease 0s;
        -moz-transition: all 0.4s ease 0s;
@@ -463,8 +463,17 @@ figcaption.mask {
 }
 
 figcaption.mask h3 {
+     
     margin: 0;
     color: #fff;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #008ECC;
+}
+
+figcaption.mask p {
+    font-size: 0.9em; 
+    line-height: 20px;
 }
 
 ul.external {
@@ -523,11 +532,17 @@ ul.external li a:hover {
 .fancybox-title p {
     color: #818181;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 20px;
 }
 
 .fancybox-title-inside-wrap {
     padding-top: 0;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: 280px;
 }
 
 /*=================================================================
@@ -948,7 +963,7 @@ textarea.form-control {
 ==============================================================*/
 @media (min-width: 1150px) {
     #jmb-home {
-        padding-bottom: 180px;
+        padding-bottom: 70px;
     }
 }
 
@@ -961,7 +976,7 @@ textarea.form-control {
 
 /* portfolio */
     figcaption.mask {
-        bottom: -151px;
+        bottom: -100px;
     }
 
     .testimonial-item > div:after {
@@ -1130,7 +1145,7 @@ textarea.form-control {
     }
 
     figcaption.mask {
-        bottom: -107px;
+        bottom: -70px;
         color: #fff;
         padding: 15px;
     }
@@ -1237,7 +1252,7 @@ textarea.form-control {
     }
 
     figcaption.mask {
-        bottom: -132px;
+        bottom: -70px;
     }
 
 /* testimonial */

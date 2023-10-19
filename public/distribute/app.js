@@ -1,12 +1,2 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-var __webpack_exports__ = {};
-/*!*************************!*\
-  !*** ./public/index.ts ***!
-  \*************************/
-
-console.log('RRRRUNNN');
-
-/******/ })()
-;
+(()=>{"use strict";({112:function(){var e=this&&this.__awaiter||function(e,n,t,o){return new(t||(t=Promise))((function(c,i){function r(e){try{a(o.next(e))}catch(e){i(e)}}function s(e){try{a(o.throw(e))}catch(e){i(e)}}function a(e){var n;e.done?c(e.value):(n=e.value,n instanceof t?n:new t((function(e){e(n)}))).then(r,s)}a((o=o.apply(e,n||[])).next())}))};const n=document.getElementById("contacts-form");document.getElementById("submit").addEventListener("click",(t=>e(void 0,void 0,void 0,(function*(){t.preventDefault();const e=new FormData(n),o=Object.fromEntries(e);try{const e=yield fetch("/sendMessage",{method:"POST",mode:"cors",cache:"no-cache",credentials:"include",headers:{"Content-Type":"application/json"},redirect:"follow",referrerPolicy:"no-referrer",body:JSON.stringify(o)}),n=yield e.json();console.log(n)}catch(e){console.log("------- *** --------","\n",e,"\n","------- *** --------")}}))))}})[112]()})();
 //# sourceMappingURL=app.js.map
