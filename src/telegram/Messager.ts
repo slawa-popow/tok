@@ -6,8 +6,6 @@ import { ContactForm } from '../types/front/ContactForm';
 
 
 export class Messager {
-
-    channelId : string = '1941650155';
     token: string = '';
     tgUrl: string = '';
     constructor () {
@@ -17,26 +15,28 @@ export class Messager {
     };
 
 
-    telegramUrl(message: string): string {
-        return `${this.tgUrl}?chat_id=${this.channelId}&text=${message}&parse_mode=HTML`
+    telegramUrl(message: string, id: string): string {
+        return `${this.tgUrl}?chat_id=${id}&text=${message}&parse_mode=HTML`
     }
 
     // ----------------------------------------------------------------
 
-    async sendMessage(mdata: ContactForm) {
+    async sendMessage(mdata: ContactForm, ids: string[], status = 'Клиент с сайта') {
         
         const msg = `
-        Клиент с сайта %0A${new Date().toLocaleString("ru-RU", {timeZone: "Europe/Moscow"})}%0A%0A
+        ${status} %0A${new Date().toLocaleString("ru-RU", {timeZone: "Europe/Moscow"})}%0A%0A
 имя: <b>${mdata.name || ''}</b>%0A
 e-mail: <b>${mdata.email || ''}</b>%0A
 тел: <b>${mdata.phone || ''}</b>%0A
 сообщение: <b>${mdata.message || ''}</b>%0A
         `; 
         try {
-            const headers = {
-                'User-Agent':  'axios client',
+            for (let id of ids) {
+                const headers = {
+                    'User-Agent':  'axios client',
+                }
+                await axios.get(this.telegramUrl(msg, id), {headers,});
             }
-            await axios.get(this.telegramUrl(msg), {headers,});
             return {err: ''};
         }
         catch (e) {

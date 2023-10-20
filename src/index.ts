@@ -29,7 +29,7 @@ app.use(session({
   name: 'sos',
   secret: secret,
   store: mysqlc.sessionStore,
-  resave: false,
+  resave: true,
 	saveUninitialized: false,
     proxy: true, 
     cookie: {maxAge: 800000, secure: true, httpOnly: true}
@@ -46,5 +46,5 @@ app.use('/', mainRouter);
 const port = process.env.PORT;
 
 app.listen(port, () => { 
-  console.log(`\nRunning App at localhost:${port}\n`)   
+  console.log(`\nRunning App at localhost:${port}\n`) ;  
 });  

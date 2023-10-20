@@ -1,11 +1,17 @@
 import { Router } from "express";
 import { mainController } from "./MainController";
+import { emaiVld, messageVld, nameVld, phoneVld } from "../middlewares/postValidate";
 
 
 const mainRouter = Router(); 
 
 mainRouter.get('/',  mainController.getIndexPage);
-mainRouter.post('/sendMessage', mainController.sendMessage);
+mainRouter.post('/sendMessage',
+                nameVld(),
+                emaiVld(),
+                phoneVld(),
+                messageVld(),
+                mainController.sendMessage);
  
 
 export { mainRouter }
