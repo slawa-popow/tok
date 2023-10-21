@@ -3,9 +3,21 @@ import { ContactForm } from '../types/front/ContactForm';
 import { Messager } from '../telegram/Messager';
 import { myValidationResult } from '../customErrors/customErrField';
 import { db } from '..';
+import { Hook } from '../types/bot/Hook';
 
 
 class MainController {
+
+    async tgBot(request: Request<{},{}, Hook>, response: Response) {
+        const hook = request.body;
+        if(hook.message && hook.update_id) {
+            response.status(200).send('ok');
+            const tg = new Messager();
+            await tg.sendRaw(hook);
+            return; 
+        }
+        return response.status(400).send('bad request');
+    }
 
     async getIndexPage(request: Request, response: Response) { 
         request.session.sessionData = request.ip;

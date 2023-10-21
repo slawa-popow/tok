@@ -11,7 +11,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     line-height: 24px;
     font-size: 16px;
-    color: #818181;
+    color: #5d5d5d;
+    
 }
 
 figure, p, address {
@@ -41,7 +42,7 @@ a, a:hover, a:focus, .btn:focus {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     color: #252525;
 }
 
@@ -164,7 +165,7 @@ main > section {
     padding-bottom: 30px;
     position: relative;
     text-transform: uppercase;
-    border-bottom: 1px solid #009ee3;
+    border-bottom: 1px solid #0180b7;
 }
 
 .sec-title.white h2 {
@@ -183,6 +184,10 @@ main > section {
 
 .sec-title.white h2:after {
     border-bottom: 1px solid #fff;
+}
+
+.sec-title p {
+    color: black;
 }
 
 .parallax {
@@ -294,6 +299,14 @@ h1.navbar-brand {
     text-transform: uppercase;
 }
 
+.title-home {
+    
+    padding: 0 20px;
+    text-align: center; 
+    color: whitesmoke; 
+    font-weight: 200; 
+    font-size: 2.5em;
+}
 
 /*=================================================================
 	Home 
@@ -301,18 +314,24 @@ h1.navbar-brand {
 
 .homepart {
     margin: 0;
-
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     background-color: black; 
-     
+
 }
 
 .about-home {
     margin-top: -50px;
+    
 }
 
+
 #jmb-home img {
+    margin: 20px 0;
+    width: 100%;
     max-width: 400px;
-    height: 280px;
+    height: auto;
 }
 
 
@@ -321,7 +340,7 @@ h1.navbar-brand {
 ==================================================================*/
 
 #about {
-    background-color: #009EE3;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
     color: #fff;
 }
 
@@ -336,7 +355,7 @@ h1.navbar-brand {
 }
 
 #about .welcome-block img {
-    border: 3px solid #fff;
+    border: 1px solid #8a8a8a;
     border-radius: 5%;
     margin-right: 35px;
     max-width: 100px;
@@ -496,11 +515,12 @@ ul.external li {
 }
 
 ul.external li a {
-    background-color: rgba(200, 188, 240, 0.9);
-    color: #818181;
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    color: #ebebeb;
     display: block;
     padding: 10px 18px 13px;
-    
+    border-radius: 50%;
+
     -webkit-transition: all 0.5s ease 0s;
        -moz-transition: all 0.5s ease 0s;
         -ms-transition: all 0.5s ease 0s;
@@ -628,7 +648,7 @@ ul.external li a:hover {
 }
 
 .price-table {
-    border: 1px solid #e3e3e3;
+    border: none;
 }
 
 .price-table.featured {
@@ -637,8 +657,13 @@ ul.external li a:hover {
             box-shadow: 0 4px 5px rgba(0,0,0,0.19);
 }
 
-.price-table > span {
-    color: #252525;
+.price-table .spantitle {
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+
+
+.spantitle span {
+    color: #e2e2e2;
     display: block;
     font-size: 24px;
     padding: 30px 0;
@@ -685,13 +710,14 @@ ul.external li a:hover {
     margin: 0;
     padding: 0;
     list-style: none;
-    text-align: center;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.862);
 }
 
 .price-table ul li {
     border-top: 1px solid #e3e3e3;
     display: block;
-    padding: 25px 0;
+    padding: 15px 10px;
 
     -webkit-transition: all 0.7s ease 0s;
        -moz-transition: all 0.7s ease 0s;
@@ -707,7 +733,7 @@ ul.external li a:hover {
 
 .price-table.featured ul li:last-child,
 .price-table ul li:last-child:hover {
-    background-color: #009EE3;
+    background-color: none;
 }
 
 .price-table.featured ul li:last-child a,
@@ -842,8 +868,8 @@ textarea.form-control {
 ==============================================================*/
 
 #footer {
-    background-color: #2E2E2E;
-    padding: 70px 0;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    padding: 25px 0;
     color: #fff;
 }
 
@@ -1207,6 +1233,22 @@ textarea.form-control {
     }
 }
 
+@media only screen and (max-width: 398px) {
+    .title-home { 
+        font-size: 1.9em;
+    }
+    .about-home p {
+        font-size: 1.6em;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .title-home { 
+        font-size: 1.4em;
+    }
+    .about-home p {
+        font-size: 1.2em;
+    }
+}
 
 /*============================================================
 	Mobile (Landscape) Design for a width of 480px
@@ -1291,6 +1333,8 @@ textarea.form-control {
     }
     
 }
+
+
 .jumbotron {
     margin-bottom: 0px;
 }

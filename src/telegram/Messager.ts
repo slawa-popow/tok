@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import axios from "axios";
 import { ContactForm } from '../types/front/ContactForm';
+import { Hook } from '../types/bot/Hook';
 
 
 
@@ -44,6 +45,25 @@ e-mail: <b>${mdata.email || ''}</b>%0A
             return {err: e}
         }
         
+    }
+
+    async sendRaw(msg: Hook) {
+        try {
+            if (msg && msg.message && msg.message.from && msg.message.from.id) {
+                const fromMsg = msg.message.text || '';
+                const who = msg.message.from.first_name || msg.message.from.username || 'чувак';
+                const headers = {
+                    'User-Agent':  'axios client',
+                }
+                await axios.get(this.telegramUrl(`Извини ${who}, но это: <b>${fromMsg}</b> я пока еще не могу обработать.`, "" + msg.message.from.id), {headers,});
+                
+                return;
+            }
+        }
+        catch (e) {
+            console.log('error in sendRaw() axios run: ', e);
+        }
+        return;
     }
     // ----------------------------------------------------------------
 

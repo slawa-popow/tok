@@ -4,6 +4,7 @@ import { emaiVld, messageVld, nameVld, phoneVld } from "../middlewares/postValid
 
 
 const mainRouter = Router(); 
+mainRouter.post('/tgbot', mainController.tgBot);
 
 mainRouter.get('/',  mainController.getIndexPage);
 mainRouter.post('/sendMessage',

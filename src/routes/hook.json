@@ -1,0 +1,22 @@
+{
+  "update_id": 52121776,
+  "message": {
+    "message_id": 103,
+    "from": {
+      "id": 1941650155,
+      "is_bot": false,
+      "first_name": "Slava",
+      "username": "Pwg90",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 1941650155,
+      "first_name": "Slava",
+      "username": "Pwg90",
+      "type": "private"
+    },
+    "date": 1697884153,
+    "text": "/start",
+    "entities": [{ "offset": 0, "length": 6, "type": "bot_command" }]
+  }
+}
